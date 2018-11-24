@@ -5,16 +5,16 @@ def triangleArea(points):
     return area
 
 def cityArea(city):
-    w = abs(int(city['TopLeft_X']) - int(city['BottomRight_X']))
-    h = abs(int(city['TopLeft_Y']) - int(city['BottomRight_Y']))
+    w = abs(float(city['TopLeft_X']) - float(city['BottomRight_X']))
+    h = abs(float(city['TopLeft_Y']) - float(city['BottomRight_Y']))
     return w * h
 
 def triangleAreaSum(city,point):
-    a = [int(city['TopLeft_X']) , int(city['TopLeft_Y'])]
-    b = [int(city['BottomRight_X']), int(city['TopLeft_Y'])]
-    c = [int(city['TopLeft_X']), int(city['BottomRight_Y'])]
-    d = [int(city['BottomRight_X']), int(city['BottomRight_Y'])]
-    point = [int(point['X']),int(point['Y'])]
+    a = [float(city['TopLeft_X']) , float(city['TopLeft_Y'])]
+    b = [float(city['BottomRight_X']), float(city['TopLeft_Y'])]
+    c = [float(city['TopLeft_X']), float(city['BottomRight_Y'])]
+    d = [float(city['BottomRight_X']), float(city['BottomRight_Y'])]
+    point = [float(point['X']),float(point['Y'])]
     area_sum = triangleArea([a,point,d]) + triangleArea([d,point,c]) + triangleArea([c,point,b]) + triangleArea([point,b,a])
     return area_sum
 
